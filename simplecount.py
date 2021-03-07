@@ -1,7 +1,7 @@
 import os
 import platform
 import glob
-
+from datetime import datetime
 print("""
      _______. __  .___  ___. .______    __       _______         ______   ______    __    __  .__   __. .___________.
     /       ||  | |   \/   | |   _  \  |  |     |   ____|       /      | /  __  \  |  |  |  | |  \ |  | |           |
@@ -23,9 +23,27 @@ while True:
         else:
             with open(command[1] + ".txt", "w") as database:
                 database.write("0")
+            if os.path.isfile("simplecount.log"):
+                pass
+            else:
+                with open("simplecount.log", "w") as database:
+                    database.write("")
+            now = datetime.now()
+            now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
+            with open("simplecount.log", "r+") as database:
+                database.writelines(f"\ncounter {command[1]} was created{now}")
     elif "delete" in command:
         if os.path.isfile(command[1] + ".txt"):
             os.remove(command[1] + ".txt")
+            if os.path.isfile("simplecount.log"):
+                pass
+            else:
+                with open("simplecount.log", "w") as database:
+                    database.write("")
+            now = datetime.now()
+            now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
+            with open("simplecount.log", "r+") as database:
+                database.writelines(f"\nthe counter {command[1]} was deleted{now}")
         else:
             print("your counter doesnt exists")
     elif "cd" in command:
@@ -64,6 +82,15 @@ while True:
                         count = count + float(command1[1])
                         database.seek(0)
                         database.write(str(count))
+                if os.path.isfile("simplecount.log"):
+                    pass
+                else:
+                    with open("simplecount.log", "w") as database:
+                        database.write("")
+                now = datetime.now()
+                now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
+                with open("simplecount.log", "r+") as database:
+                    database.writelines(f"\nvalue of {command[1]} was changed by + {command1[1]} and is now {count}{now}")
             elif "remove" in command1:
                 if "." in command1[1]:
                     command1[1] = float(command1[1])
@@ -83,6 +110,15 @@ while True:
                         count = count - float(command1[1])
                         database.seek(0)
                         database.write(str(count))
+                if os.path.isfile("simplecount.log"):
+                    pass
+                else:
+                    with open("simplecount.log", "w") as database:
+                        database.write("")
+                now = datetime.now()
+                now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
+                with open("simplecount.log", "r+") as database:
+                    database.writelines(f"\nvalue of {command[1]} was changed by - {command1[1]} and is now {count}{now}")
             elif "show" in command1:
                 with open(command[1] + ".txt", "r+") as database:
                     count = database.read()
@@ -96,6 +132,15 @@ while True:
                 with open(command[1] + ".txt", "w") as database:
                     database.seek(0)
                     database.write("0")
+                if os.path.isfile("simplecount.log"):
+                    pass
+                else:
+                    with open("simplecount.log", "w") as database:
+                        database.write("")
+                now = datetime.now()
+                now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
+                with open("simplecount.log", "r+") as database:
+                    database.writelines(f"\nvalue of {command[1]} was reseted{now}")
             elif "exit" in command1:
                 print("\nbye see you next time :)\n")
                 break
