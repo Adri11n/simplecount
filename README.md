@@ -4,7 +4,7 @@ if you need help with the args run the file and type
 help
 ```
 # export feature
-with this feature you can export counter values and your hole logfile using email.
+with this feature you can export counter values and your hole logfile using email.\
 the script must be startet like this
 ```
 #on Linux
