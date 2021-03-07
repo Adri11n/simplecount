@@ -2,6 +2,7 @@ import os
 import platform
 import glob
 from datetime import datetime
+os.chdir(os.path.dirname(__file__))
 print("""
      _______. __  .___  ___. .______    __       _______         ______   ______    __    __  .__   __. .___________.
     /       ||  | |   \/   | |   _  \  |  |     |   ____|       /      | /  __  \  |  |  |  | |  \ |  | |           |

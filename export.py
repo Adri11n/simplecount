@@ -1,6 +1,8 @@
 import sys
 import smtplib
 import ssl
+import os
+os.chdir(os.path.dirname(__file__))
 which = sys.argv[1]
 counter = sys.argv[2]
 smtp_server = sys.argv[3]
