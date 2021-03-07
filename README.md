@@ -14,8 +14,7 @@ python export.py
 ```
 # Arguments that are nedded for export.py
 
-this is the lis of arguments
-\
+this is the lis of arguments\
 ```
 #example args for an export of an counter
 python export.py value yourcounter smtp.exaple.com sender-email smpt-server-port recieveremail yoursenderemailpassword
