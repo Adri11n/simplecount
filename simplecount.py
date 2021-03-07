@@ -30,7 +30,7 @@ while True:
                     database.write("")
             now = datetime.now()
             now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
-            with open("simplecount.log", "r+") as database:
+            with open("simplecount.log", "a") as database:
                 database.writelines(f"\ncounter {command[1]} was created{now}")
     elif "delete" in command:
         if os.path.isfile(command[1] + ".txt"):
@@ -42,7 +42,7 @@ while True:
                     database.write("")
             now = datetime.now()
             now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
-            with open("simplecount.log", "r+") as database:
+            with open("simplecount.log", "a") as database:
                 database.writelines(f"\nthe counter {command[1]} was deleted{now}")
         else:
             print("your counter doesnt exists")
@@ -89,7 +89,7 @@ while True:
                         database.write("")
                 now = datetime.now()
                 now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
-                with open("simplecount.log", "r+") as database:
+                with open("simplecount.log", "a") as database:
                     database.writelines(f"\nvalue of {command[1]} was changed by + {command1[1]} and is now {count}{now}")
             elif "remove" in command1:
                 if "." in command1[1]:
@@ -117,7 +117,7 @@ while True:
                         database.write("")
                 now = datetime.now()
                 now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
-                with open("simplecount.log", "r+") as database:
+                with open("simplecount.log", "a") as database:
                     database.writelines(f"\nvalue of {command[1]} was changed by - {command1[1]} and is now {count}{now}")
             elif "show" in command1:
                 with open(command[1] + ".txt", "r+") as database:
@@ -139,7 +139,7 @@ while True:
                         database.write("")
                 now = datetime.now()
                 now = now.strftime(" | %H:%M:%S | %d/%m/%Y")
-                with open("simplecount.log", "r+") as database:
+                with open("simplecount.log", "a") as database:
                     database.writelines(f"\nvalue of {command[1]} was reseted{now}")
             elif "exit" in command1:
                 print("\nbye see you next time :)\n")
