@@ -12,7 +12,7 @@ python3 export.py
 #on windows
 python export.py
 ```
-#Arguments that are nedded for export.py
+# Arguments that are nedded for export.py
 this is the lis of arguments
 ```
 #example args for an export of an counter
