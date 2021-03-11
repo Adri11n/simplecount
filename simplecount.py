@@ -68,7 +68,11 @@ while True:
                 if "." in command1[1]:
                     command1[1] = float(command1[1])
                 else:
-                    command1[1] = int(command1[1])
+                    try:
+                        command1[1] = int(command1[1])
+                    except ValueError:
+                        print("invalid input only numbers are allowed")
+                        continue
                 if type(command1[1]) is int:
                     with open(command[1] + ".txt", "r+") as database:
                         count = database.read()
@@ -96,7 +100,11 @@ while True:
                 if "." in command1[1]:
                     command1[1] = float(command1[1])
                 else:
-                    command1[1] = int(command1[1])
+                    try:
+                        command1[1] = int(command1[1])
+                    except ValueError:
+                        print("invalid input only numbers are allowed")
+                        continue
                 if type(command1[1]) is int:
                     with open(command[1] + ".txt", "r+") as database:
                         count = database.read()
